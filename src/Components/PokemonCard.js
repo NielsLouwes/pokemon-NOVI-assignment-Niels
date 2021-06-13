@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import './App.css';
 import axios from 'axios';
 
-function App() {
+export default function PokemonCard () {
 
-  const [pokemon, setPokemon] = useState(null);
-  console.log("WHAT IS STATE?" , pokemon);
+    const [pokemon, setPokemon] = useState(null);
+    console.log("WHAT IS STATE?" , pokemon);
 
   useEffect(() => {
     console.log("ON MOUNT:");
@@ -20,10 +19,11 @@ function App() {
    fetchPokemon();
   }, []);
 
+    console.log(pokemon);
 
-  return (
-    <div>
-      
+    return (
+        
+        <div>
       {pokemon ? (
          <>
           <h1>{pokemon.name}</h1>
@@ -51,6 +51,7 @@ function App() {
         <h3>Loading</h3>
       )}
     </div>
-  );
+
+
+    )
 }
-export default App;
